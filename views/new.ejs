@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+
+    <title>New Post</title>
+</head>
+<body class="fade-in">
+    <section class="newBlog">
+        <div class="form">
+            <div class="form-info">
+                <h1>Create a New Post</h1>
+                <form action="/new" method="POST">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Content</label>
+                <textarea id="content" name="content" required></textarea>
+                <button class="btn" type="submit">Submit</button>
+                <button class="btn" id="back-to-home"><a href="/">Back to Home</a></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById("back-to-home").addEventListener('click', function(e){
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(()=>{
+                window.location.href = "/";
+            }, 500);
+        });
+        window.addEventListener("popstate", function() {
+            document.body.classList.remove("fade-out");
+            document.body.classList.add("fade-in");
+        });
+    </script>
+</body>
+</html>
