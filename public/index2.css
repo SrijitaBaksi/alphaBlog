@@ -73,15 +73,36 @@ body.fade-out {
         opacity: 0;
     }
 }
-.btn{
-    color:blueviolet;
-    padding:10px 30px;
+.btn {
+    background-color: white; /* Set button background to white for contrast */
+    color: blueviolet; /* Text color */
+    padding: 10px 30px;
     font-weight: bold;
     border-radius: 10px;
-    border: 0;
+    border: 2px solid blueviolet; /* Added border for definition */
     margin-top: 10px;
+    cursor: pointer; /* Pointer cursor on button hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for background and transform */
 }
-.btn a{
-    color:blueviolet;
+
+.btn:hover {
+    background-color: blueviolet; /* Change background to blueviolet on hover */
+    color: white; /* Change text color to white on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+.btn:active {
+    transform: translateY(1px); /* Slightly push down when active */
+}
+
+.btn a {
+    color: inherit; /* Use inherited color for better contrast */
     text-decoration: none;
+    transition: color 0.3s ease; /* Added transition for link color */
 }
+
+.btn a:hover {
+    color: white; /* Change link color to white on hover */
+}
+
